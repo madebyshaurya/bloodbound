@@ -11,10 +11,16 @@ config_version=5
 [application]
 
 config/name="bloodbound"
+run/main_scene="uid://15i6xv2ievxo"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/collapse_folders/plugin.cfg", "res://addons/nklbdev.aseprite_importers/plugin.cfg")
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
