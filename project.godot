@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="bloodbound"
-run/main_scene="uid://15i6xv2ievxo"
+run/main_scene="uid://cd4h5x2telod6"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
