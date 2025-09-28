@@ -15,12 +15,18 @@ func _set_bw_strength(value: float) -> void:
 		mat.set_shader_parameter("strength", clampf(value, 0.0, 1.0))
 
 func _on_body_entered(body: Node2D) -> void:
+	trigger_death(body)
+
+
+func trigger_death(body: Node2D) -> void:
+	if not body:
+		return
 	print("You Died.")
 	if body.has_method("die"):
 		body.die()
 	if death_sound.stream:
 		death_sound.play()
-		
+
 	if bw_tween:
 		bw_tween.kill()
 	_set_bw_strength(0.0)
@@ -29,7 +35,8 @@ func _on_body_entered(body: Node2D) -> void:
 		bw_tween.tween_method(_set_bw_strength, 0.0, 1.0, 0.35).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 	Engine.time_scale = 0.5
-	body.get_node("CollisionShape2D").queue_free()
+	if body.has_node("CollisionShape2D"):
+		body.get_node("CollisionShape2D").queue_free()
 	timer.start()
 
 
