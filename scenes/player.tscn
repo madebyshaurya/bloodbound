@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://cnfpwvdxijv1d"]
+[gd_scene load_steps=37 format=3 uid="uid://cnfpwvdxijv1d"]
 
 [ext_resource type="Texture2D" uid="uid://dwgra0mfvxq8x" path="res://assets/Jungle Asset Pack/Character/files/idle.png" id="1_dqkch"]
+[ext_resource type="Script" uid="uid://cyjv7pvcf1j8p" path="res://scripts/player.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://gsy1hb5jxqvo" path="res://assets/Jungle Asset Pack/Character/files/full jump.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dj4m00jgdihxi" path="res://assets/Jungle Asset Pack/Character/files/ledge grab.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://bjmhllry11mbs" path="res://assets/Jungle Asset Pack/Character/files/run.png" id="4_fjrip"]
@@ -235,6 +236,7 @@ animations = [{
 size = Vector2(10, 26)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hax0n")
