@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3xy6o5kq05m8"]
+
+[ext_resource type="Script" path="res://scripts/player_bullet.gd" id="1_yu5qt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gy0m5"]
+radius = 2.5
+
+[node name="PlayerBullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+monitoring = true
+monitorable = true
+script = ExtResource("1_yu5qt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gy0m5")

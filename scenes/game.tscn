@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://cd4h5x2telod6"]
+[gd_scene load_steps=23 format=4 uid="uid://cd4h5x2telod6"]
 
 [ext_resource type="PackedScene" uid="uid://cnfpwvdxijv1d" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://dpq2ti8ag58ss" path="res://assets/TrapmoorTileset_v03.png" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dpq2ti8ag58ss" path="res://assets/Background/TrapmoorTileset_v03.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://q21bptaexcma" path="res://scenes/killzone.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://diygpwwnwtpmg" path="res://scenes/labels.tscn" id="4_kvuet"]
 [ext_resource type="Texture2D" uid="uid://c602yxa47k35w" path="res://assets/layers/parallax-demon-woods-bg.png" id="4_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://55aohc4bc6k5" path="res://assets/layers/parallax-demon-woods-far-trees.png" id="5_gee14"]
 [ext_resource type="Texture2D" uid="uid://dtv4phqrb80d6" path="res://assets/layers/parallax-demon-woods-mid-trees.png" id="6_0tnpc"]
@@ -12,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://c2n8xd3boufx6" path="res://scenes/spike.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://cavj28jj8lklr" path="res://scenes/shop.tscn" id="11_kvpfn"]
 [ext_resource type="PackedScene" path="res://scenes/ui/shop_menu.tscn" id="12_shopmenu"]
+[ext_resource type="AudioStream" uid="uid://clnokfjrklgbs" path="res://assets/Sounds/bgmusic.mp3" id="14_trtic"]
+[ext_resource type="PackedScene" uid="uid://o75rt6n4xut8" path="res://scenes/skeleton.tscn" id="15_skeleton"]
 
 [sub_resource type="GDScript" id="GDScript_gee14"]
 
@@ -175,11 +178,17 @@ tile_map_data = PackedByteArray("AACa/wMAAAAAAAAAAQCb/wMAAAAAAAAAAQCd/wMAAAAAAAA
 tile_set = SubResource("TileSet_kvpfn")
 
 [node name="shop" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(-1439, -53)
+position = Vector2(-307, 13)
+
+[node name="Labels" parent="." instance=ExtResource("4_kvuet")]
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 z_index = 5
-position = Vector2(-1657, 38)
+position = Vector2(-1657, -6)
+scale = Vector2(0.7, 0.7)
+
+[node name="SkeletonEnemy" parent="." instance=ExtResource("15_skeleton")]
+position = Vector2(-1400, -10)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 0)
@@ -301,4 +310,71 @@ text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AmmoContainer" type="Control" parent="HUD"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -90.0
+offset_right = -20.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="AmmoLabel" type="Label" parent="HUD/AmmoContainer"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Ammo: 0/0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InstructionsPanel" type="Panel" parent="HUD"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 0.15
+offset_left = -220.0
+offset_right = 220.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InstructionsLabel" type="Label" parent="HUD/InstructionsPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "Controls:
+Move: A/D or Left/Right
+Jump: Space or W
+Shoot: J
+Press any key to continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ShopMenu" parent="." instance=ExtResource("12_shopmenu")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_trtic")
+volume_db = -10.0
+autoplay = true

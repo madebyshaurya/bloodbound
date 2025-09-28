@@ -1,0 +1,395 @@
+[gd_scene load_steps=2 format=3 uid="uid://diygpwwnwtpmg"]
+
+[ext_resource type="FontFile" uid="uid://dbq60pccvxd5g" path="res://assets/font/PixelOperator8.ttf" id="3_kvuet"]
+
+[node name="Labels" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1674.0
+offset_top = -27.0
+offset_right = -1484.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "Welcome to 
+bloodbound"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1671.93
+offset_top = 53.117004
+offset_right = -1481.93
+offset_bottom = 102.117004
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "Look out for spikes!
+"
+
+[node name="Label9" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 1690.0
+offset_top = 139.0
+offset_right = 1907.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = ":/
+"
+
+[node name="Label" type="Label" parent="Label/Label9"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1622.199
+offset_top = 27.924004
+offset_right = -1418.199
+offset_bottom = 76.924
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "Look out for spikes!
+"
+
+[node name="Label7" type="Label" parent="Label/Label9"]
+layout_mode = 0
+offset_left = 1187.0
+offset_top = 86.0
+offset_right = 1404.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "NICE JOB!
+"
+
+[node name="Label" type="Label" parent="Label/Label9/Label7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1622.199
+offset_top = 27.924004
+offset_right = -1418.199
+offset_bottom = 76.924
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "Look out for spikes!
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -1475.0
+offset_top = 26.0
+offset_right = -1258.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "watch out for spikes!"
+
+[node name="Label" type="Label" parent="Label2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1671.93
+offset_top = 53.117004
+offset_right = -1481.93
+offset_bottom = 102.117004
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label2" type="Label" parent="Label2"]
+layout_mode = 0
+offset_left = -1475.0
+offset_top = 26.0
+offset_right = -1258.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "watch out for spikes!"
+
+[node name="Label" type="Label" parent="Label2/Label2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1671.93
+offset_top = 53.117004
+offset_right = -1481.93
+offset_bottom = 102.117004
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label3" type="Label" parent="Label2"]
+layout_mode = 0
+offset_left = -1475.0
+offset_top = 26.0
+offset_right = -1258.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "watch out for spikes!"
+
+[node name="Label" type="Label" parent="Label2/Label3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1671.93
+offset_top = 53.117004
+offset_right = -1481.93
+offset_bottom = 102.117004
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label2" type="Label" parent="Label2/Label3"]
+layout_mode = 0
+offset_left = -1475.0
+offset_top = 26.0
+offset_right = -1258.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "watch out for spikes!"
+
+[node name="Label" type="Label" parent="Label2/Label3/Label2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1671.93
+offset_top = 53.117004
+offset_right = -1481.93
+offset_bottom = 102.117004
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -1300.0
+offset_top = 134.0
+offset_right = -875.0
+offset_bottom = 183.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = " think falling down was a good idea?"
+
+[node name="Label" type="Label" parent="Label3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1671.93
+offset_top = 53.117004
+offset_right = -1481.93
+offset_bottom = 102.117004
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -759.0
+offset_top = 2.0
+offset_right = -463.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "Use the shop for your benefit"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -581.0
+offset_top = 23.0
+offset_right = -364.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "use health....wisely
+"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 2246.0
+offset_top = 19.0
+offset_right = 2463.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "congrats!!"
+
+[node name="Label" type="Label" parent="Label6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1622.199
+offset_top = 27.924004
+offset_right = -1418.199
+offset_bottom = 76.924
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label5" type="Label" parent="Label6"]
+layout_mode = 0
+offset_left = 2235.0
+offset_top = 20.0
+offset_right = 2452.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "congrats!!"
+
+[node name="Label" type="Label" parent="Label6/Label5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1622.199
+offset_top = 27.924004
+offset_right = -1418.199
+offset_bottom = 76.924
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 163.0
+offset_right = 441.0
+offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "good job!
+"
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 1931.0
+offset_top = 143.0
+offset_right = 2148.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "NICE JOB!!"
+
+[node name="Label" type="Label" parent="Label8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1622.199
+offset_top = 27.924004
+offset_right = -1418.199
+offset_bottom = 76.924
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label9" type="Label" parent="."]
+offset_left = 1656.0
+offset_top = 9.0
+offset_right = 1873.0
+offset_bottom = 37.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = "congrats!!"
+
+[node name="Label" type="Label" parent="Label9"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1622.199
+offset_top = 27.924004
+offset_right = -1418.199
+offset_bottom = 76.924
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label10" type="Label" parent="."]
+offset_left = 1690.0
+offset_top = 139.0
+offset_right = 1907.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 16
+text = ":P
+"
+
+[node name="Label" type="Label" parent="Label10"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -1622.199
+offset_top = 27.924004
+offset_right = -1418.199
+offset_bottom = 76.924
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "Look out for spikes!
+"
+
+[node name="Label7" type="Label" parent="Label10"]
+layout_mode = 0
+offset_left = 1931.0
+offset_top = 143.0
+offset_right = 2148.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "NICE JOB!!"
+
+[node name="Label" type="Label" parent="Label10/Label7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047000002
+anchor_top = -1.5330001
+anchor_right = 0.047000002
+anchor_bottom = -1.5330001
+offset_left = -2551.199
+offset_top = -41.075996
+offset_right = -2347.199
+offset_bottom = 7.9240036
+theme_override_fonts/font = ExtResource("3_kvuet")
+theme_override_font_sizes/font_size = 13
+text = "so close!
+"

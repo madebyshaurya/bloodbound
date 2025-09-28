@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://o75rt6n4xut8"]
+[gd_scene load_steps=65 format=3 uid="uid://o75rt6n4xut8"]
 
 [ext_resource type="Texture2D" uid="uid://ouf7w7g4vgwj" path="res://assets/Skeleton/Skeleton_01_Yellow_Attack1.png" id="1_ssl1b"]
 [ext_resource type="Texture2D" uid="uid://bwm8cghs0lf8k" path="res://assets/Skeleton/Skeleton_01_Yellow_Attack2.png" id="2_w4hcs"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cmbigi3wvlb8l" path="res://assets/Skeleton/Skeleton_01_Yellow_Hurt.png" id="4_i0f3v"]
 [ext_resource type="Texture2D" uid="uid://wxrg2qo3k42f" path="res://assets/Skeleton/Skeleton_01_Yellow_Idle.png" id="5_xrus2"]
 [ext_resource type="Texture2D" uid="uid://dk4h2jt3olark" path="res://assets/Skeleton/Skeleton_01_Yellow_Walk.png" id="6_7e1v2"]
+[ext_resource type="Script" path="res://scripts/skeleton.gd" id="7_1mdo7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjsi3"]
 atlas = ExtResource("1_ssl1b")
@@ -425,10 +426,39 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Skeleton" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssl1b"]
+size = Vector2(13, 41)
+
+[node name="Skeleton" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("7_1mdo7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vxdrv")
-animation = &"idle"
+animation = &"attack1"
 autoplay = "idle"
-frame_progress = 0.9420351
+frame_progress = 0.0
+offset = Vector2(0, -22)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -32.0
+offset_top = -56.0
+offset_right = 32.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 60.0
+min_value = 0.0
+max_value = 60.0
+step = 1.0
+show_percentage = false
+mouse_filter = 2
+focus_mode = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 11.5)
+shape = SubResource("RectangleShape2D_ssl1b")

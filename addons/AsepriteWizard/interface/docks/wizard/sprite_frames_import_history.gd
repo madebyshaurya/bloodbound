@@ -179,6 +179,8 @@ func _remove_entries(source_file_path: String, entry_index: int = -1):
 
 
 func _remove_from_history(entry_index: int):
+	if entry_index < 0 or entry_index >= _history.size():
+		return
 	var _already_adjusted = []
 	# to avoid re-creating the whole nodes list, I just decrement
 	# the index from items newer than the excluded one
