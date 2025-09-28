@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr85ej00jtcd5"
-path="res://.godot/imported/plx-3.png-3d8db50633ef038f38e4399fea2ea8fd.ctex"
+uid="uid://wxrg2qo3k42f"
+path="res://.godot/imported/Skeleton_01_Yellow_Idle.png-c9912f5208524ca3ae285b514cf305f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Jungle Asset Pack/parallax background/plx-3.png"
-dest_files=["res://.godot/imported/plx-3.png-3d8db50633ef038f38e4399fea2ea8fd.ctex"]
+source_file="res://assets/Skeleton/Skeleton_01_Yellow_Idle.png"
+dest_files=["res://.godot/imported/Skeleton_01_Yellow_Idle.png-c9912f5208524ca3ae285b514cf305f5.ctex"]
 
 [params]
 

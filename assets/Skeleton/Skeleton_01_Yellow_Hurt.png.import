@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnj8grnhyk1fy"
-valid=false
+uid="uid://cmbigi3wvlb8l"
+path="res://.godot/imported/Skeleton_01_Yellow_Hurt.png-186998844fa6cbebf6cd9576c2d84e19.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/Jungle Asset Pack/ Chacter with outline/files/full jump animation outline.ase"
+source_file="res://assets/Skeleton/Skeleton_01_Yellow_Hurt.png"
+dest_files=["res://.godot/imported/Skeleton_01_Yellow_Hurt.png-186998844fa6cbebf6cd9576c2d84e19.ctex"]
 
 [params]
 

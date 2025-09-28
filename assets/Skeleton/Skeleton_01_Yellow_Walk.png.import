@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxuf4q41jn4kx"
-path="res://.godot/imported/plx-5.png-8e1fc8a1e996b48a8b9089625effb7ed.ctex"
+uid="uid://dk4h2jt3olark"
+path="res://.godot/imported/Skeleton_01_Yellow_Walk.png-bb18e05cbd5d550ca85aa17f0ed03f48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Jungle Asset Pack/parallax background/plx-5.png"
-dest_files=["res://.godot/imported/plx-5.png-8e1fc8a1e996b48a8b9089625effb7ed.ctex"]
+source_file="res://assets/Skeleton/Skeleton_01_Yellow_Walk.png"
+dest_files=["res://.godot/imported/Skeleton_01_Yellow_Walk.png-bb18e05cbd5d550ca85aa17f0ed03f48.ctex"]
 
 [params]
 
