@@ -1,12 +1,18 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=9 format=4 uid="uid://15i6xv2ievxo"]
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://15i6xv2ievxo"]
 =======
 [gd_scene load_steps=9 format=4 uid="uid://15i6xv2ievxo"]
 >>>>>>> e04028ec412bac8e143c6cc105ed5362586b6263
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://cnfpwvdxijv1d" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -14,7 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://q21bptaexcma" path="res://scenes/killzone.tscn" id="3_lnu2h"]
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = -22.0
@@ -28,6 +37,9 @@ distance = -22.0
 [ext_resource type="Texture2D" uid="uid://55aohc4bc6k5" path="res://assets/layers/parallax-demon-woods-far-trees.png" id="5_gee14"]
 [ext_resource type="Texture2D" uid="uid://dtv4phqrb80d6" path="res://assets/layers/parallax-demon-woods-mid-trees.png" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bug8524m12uib" path="res://assets/layers/parallax-demon-woods-close-trees.png" id="7_vtaks"]
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
@@ -125,6 +137,10 @@ texture = ExtResource("2_yqjtg")
 [sub_resource type="TileSet" id="TileSet_iywne"]
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> e04028ec412bac8e143c6cc105ed5362586b6263
+>>>>>>> Stashed changes
 =======
 >>>>>>> e04028ec412bac8e143c6cc105ed5362586b6263
 >>>>>>> Stashed changes
@@ -265,9 +281,12 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 distance = 8.0
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u5sy4"]
 >>>>>>> Stashed changes
@@ -275,6 +294,9 @@ distance = 8.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 distance = 8.0
 >>>>>>> e04028ec412bac8e143c6cc105ed5362586b6263
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [node name="Game" type="Node2D"]
@@ -286,13 +308,19 @@ position = Vector2(1, -22)
 position = Vector2(-1, 0)
 zoom = Vector2(4, 4)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 limit_bottom = 120
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 limit_bottom = 120
 >>>>>>> e04028ec412bac8e143c6cc105ed5362586b6263
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 position_smoothing_enabled = true
 
@@ -303,7 +331,10 @@ tile_map_data = PackedByteArray("AADy//b/AAAKAAAAAADy//f/AAAKAAAAAADy//j/AAAKAAA
 tile_set = SubResource("TileSet_iywne")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
@@ -356,6 +387,9 @@ position = Vector2(0, 191)
 shape = SubResource("WorldBoundaryShape2D_u5sy4")
 >>>>>>> Stashed changes
 =======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD+/wAAAAACAAAAAAD//wAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAD6/wAAAAACAAAAAAD7/wAAAAADAAAAAAD8/wAAAAAEAAAAAAD9/wAAAAAFAAAAAAACAAAAAAACAAAAAAADAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAFAAAAAAD6/wEAAAACAAEAAAD6/wIAAAAEAAIAAAD6/wMAAAAEAAIAAAD6/wQAAAAFAAIAAAD7/wEAAAAEAAIAAAD7/wIAAAAEAAEAAAD8/wEAAAAEAAEAAAD8/wIAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wIAAAAFAAIAAAD+/wEAAAAEAAIAAAD+/wIAAAAEAAEAAAD//wEAAAAEAAEAAAD//wIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAABAAEAAAAEAAIAAAABAAIAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAADAAEAAAAFAAEAAAADAAIAAAAEAAEAAAD7/wMAAAAEAAEAAAD7/wQAAAAFAAIAAAD8/wMAAAAEAAEAAAD8/wQAAAAFAAIAAAD9/wMAAAAEAAEAAAD9/wQAAAAEAAEAAAD+/wMAAAAFAAEAAAD+/wQAAAAEAAEAAAD//wMAAAAEAAEAAAD//wQAAAAEAAEAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAEAAAABAAMAAAAEAAIAAAABAAQAAAAFAAIAAAACAAMAAAAEAAEAAAACAAQAAAAEAAEAAAADAAMAAAAEAAIAAAADAAQAAAAEAAEAAAAEAAEAAAADAAEAAAAEAAIAAAAEAAEAAAAFAAEAAAAEAAEAAAAFAAIAAAAIAAUAAAAGAAEAAAAFAAEAAAAGAAIAAAAFAAEAAAAEAAMAAAADAAEAAAAEAAQAAAADAAIAAAAFAAMAAAAEAAEAAAAFAAQAAAAEAAIAAAAGAAMAAAAEAAEAAAAGAAQAAAAFAAIAAAAGAAAAAAAFAAAAAAA=")
@@ -368,6 +402,10 @@ position = Vector2(54, -24)
 position = Vector2(-54, 132)
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> e04028ec412bac8e143c6cc105ed5362586b6263
+>>>>>>> Stashed changes
 =======
 >>>>>>> e04028ec412bac8e143c6cc105ed5362586b6263
 >>>>>>> Stashed changes
