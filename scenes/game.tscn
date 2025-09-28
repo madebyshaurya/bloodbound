@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cd4h5x2telod6"]
+[gd_scene load_steps=14 format=4 uid="uid://cd4h5x2telod6"]
 
 [ext_resource type="PackedScene" uid="uid://cnfpwvdxijv1d" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dpq2ti8ag58ss" path="res://assets/TrapmoorTileset_v03.png" id="2_yqjtg"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://55aohc4bc6k5" path="res://assets/layers/parallax-demon-woods-far-trees.png" id="5_gee14"]
 [ext_resource type="Texture2D" uid="uid://dtv4phqrb80d6" path="res://assets/layers/parallax-demon-woods-mid-trees.png" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://bug8524m12uib" path="res://assets/layers/parallax-demon-woods-close-trees.png" id="7_vtaks"]
+[ext_resource type="Shader" uid="uid://djnjmra2wmogt" path="res://desaturate.gdshader" id="8_gee14"]
+[ext_resource type="Script" uid="uid://cgt0jx5kckr3l" path="res://scripts/game.gd" id="9_vxt7p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -145,10 +147,15 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u5sy4"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0tnpc"]
+shader = ExtResource("8_gee14")
+shader_parameter/strength = 0.0
+
 [node name="Game" type="Node2D"]
+script = ExtResource("9_vxt7p")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(1, -22)
+position = Vector2(1, 39)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 0)
@@ -161,37 +168,53 @@ position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 57)
-tile_map_data = PackedByteArray("AAD+/wAAAAACAAAAAAD//wAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAD6/wAAAAACAAAAAAD7/wAAAAADAAAAAAD8/wAAAAAEAAAAAAD9/wAAAAAFAAAAAAACAAAAAAACAAAAAAADAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAFAAAAAAD6/wEAAAACAAEAAAD6/wIAAAAEAAIAAAD6/wMAAAAEAAIAAAD6/wQAAAAFAAIAAAD7/wEAAAAEAAIAAAD7/wIAAAAEAAEAAAD8/wEAAAAEAAEAAAD8/wIAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wIAAAAFAAIAAAD+/wEAAAAEAAIAAAD+/wIAAAAEAAEAAAD//wEAAAAEAAEAAAD//wIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAABAAEAAAAEAAIAAAABAAIAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAADAAEAAAAFAAEAAAADAAIAAAAEAAEAAAD7/wMAAAAEAAEAAAD7/wQAAAAFAAIAAAD8/wMAAAAEAAEAAAD8/wQAAAAFAAIAAAD9/wMAAAAEAAEAAAD9/wQAAAAEAAEAAAD+/wMAAAAFAAEAAAD+/wQAAAAEAAEAAAD//wMAAAAEAAEAAAD//wQAAAAEAAEAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAEAAAABAAMAAAAEAAIAAAABAAQAAAAFAAIAAAACAAMAAAAEAAEAAAACAAQAAAAEAAEAAAADAAMAAAAEAAIAAAADAAQAAAAEAAEAAAAEAAEAAAADAAEAAAAEAAIAAAAEAAEAAAAFAAEAAAAEAAEAAAAFAAIAAAAIAAUAAAAGAAEAAAAFAAEAAAAGAAIAAAAFAAEAAAAEAAMAAAADAAEAAAAEAAQAAAADAAIAAAAFAAMAAAAEAAEAAAAFAAQAAAAEAAIAAAAGAAMAAAAEAAEAAAAGAAQAAAAFAAIAAAAGAAAAAAAFAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wAAAAACAAAAAAD//wAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAD6/wAAAAACAAAAAAD7/wAAAAADAAAAAAD8/wAAAAAEAAAAAAD9/wAAAAAFAAAAAAACAAAAAAACAAAAAAADAAAAAAADAAAAAAD6/wEAAAACAAEAAAD6/wIAAAAEAAIAAAD6/wMAAAAEAAIAAAD6/wQAAAAFAAIAAAD7/wEAAAAEAAIAAAD7/wIAAAAEAAEAAAD8/wEAAAAEAAEAAAD8/wIAAAAEAAEAAAD9/wEAAAAEAAEAAAD9/wIAAAAFAAIAAAD+/wEAAAAEAAIAAAD+/wIAAAAEAAEAAAD//wEAAAAEAAEAAAD//wIAAAAEAAEAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAABAAEAAAAEAAIAAAABAAIAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAADAAEAAAAFAAEAAAADAAIAAAAEAAEAAAD7/wMAAAAEAAEAAAD7/wQAAAAFAAIAAAD8/wMAAAAEAAEAAAD8/wQAAAAFAAIAAAD9/wMAAAAEAAEAAAD9/wQAAAAEAAEAAAD+/wMAAAAFAAEAAAD+/wQAAAAEAAEAAAD//wMAAAAEAAEAAAD//wQAAAAEAAEAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAEAAAABAAMAAAAEAAIAAAABAAQAAAAFAAIAAAACAAMAAAAEAAEAAAACAAQAAAAEAAEAAAADAAMAAAAEAAIAAAADAAQAAAAEAAEAAAAEAAEAAAADAAEAAAAEAAIAAAAEAAEAAAAFAAEAAAAEAAEAAAAFAAIAAAAIAAUAAAAGAAEAAAAFAAEAAAAGAAIAAAAFAAEAAAAEAAMAAAADAAEAAAAEAAQAAAADAAIAAAAFAAMAAAAEAAEAAAAFAAQAAAAEAAIAAAAGAAMAAAAEAAEAAAAGAAQAAAAFAAIAAAAEAAAAAAAEAAAAAAAFAAAAAAAFAAAAAAAGAAAAAAAFAAAAAAA=")
 tile_set = SubResource("TileSet_lbhrr")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="BG" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(480, 0)
+motion_mirroring = Vector2(480, 272)
 
 [node name="bg" type="Sprite2D" parent="ParallaxBackground/BG"]
 texture = ExtResource("4_u5sy4")
 
+[node name="bg_bottom" type="Sprite2D" parent="ParallaxBackground/BG"]
+position = Vector2(0, 272)
+texture = ExtResource("4_u5sy4")
+
 [node name="Far Trees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(592, 0)
+motion_mirroring = Vector2(592, 272)
 
 [node name="far" type="Sprite2D" parent="ParallaxBackground/Far Trees"]
 texture = ExtResource("5_gee14")
 
+[node name="far_bottom" type="Sprite2D" parent="ParallaxBackground/Far Trees"]
+position = Vector2(0, 272)
+texture = ExtResource("5_gee14")
+
 [node name="MidTrees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(592, 0)
+motion_mirroring = Vector2(592, 272)
 
 [node name="mid" type="Sprite2D" parent="ParallaxBackground/MidTrees"]
 texture = ExtResource("6_0tnpc")
 
+[node name="mid_bottom" type="Sprite2D" parent="ParallaxBackground/MidTrees"]
+position = Vector2(0, 272)
+texture = ExtResource("6_0tnpc")
+
 [node name="CloseTrees" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 0.8)
-motion_mirroring = Vector2(592, 0)
+motion_mirroring = Vector2(592, 272)
 
 [node name="close" type="Sprite2D" parent="ParallaxBackground/CloseTrees"]
+texture = ExtResource("7_vtaks")
+
+[node name="close_bottom" type="Sprite2D" parent="ParallaxBackground/CloseTrees"]
+position = Vector2(0, 272)
 texture = ExtResource("7_vtaks")
 
 [node name="killzone" parent="." instance=ExtResource("3_lnu2h")]
@@ -199,3 +222,14 @@ position = Vector2(0, 191)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_u5sy4")
+
+[node name="PostFX" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="BWOverlay" type="ColorRect" parent="PostFX"]
+material = SubResource("ShaderMaterial_0tnpc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

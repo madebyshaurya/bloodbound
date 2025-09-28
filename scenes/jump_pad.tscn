@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=4 uid="uid://biu5kuv2nj8a0"]
+
+[ext_resource type="Texture2D" uid="uid://dpq2ti8ag58ss" path="res://assets/TrapmoorTileset_v03.png" id="1_wi4fv"]
+[ext_resource type="Script" uid="uid://59ad91d11e634" path="res://scripts/jump_pad.gd" id="2_kqxgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k5vj"]
+size = Vector2(16, 10)
+
+[node name="JumpPad" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+monitoring = true
+monitorable = false
+script = ExtResource("2_kqxgi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wi4fv")
+region_enabled = true
+region_rect = Rect2(0, 80, 16, 16)
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0k5vj")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
