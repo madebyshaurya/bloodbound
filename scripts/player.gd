@@ -3,7 +3,16 @@ extends CharacterBody2D
 signal health_changed(current_health: int, max_health: int)
 
 const SPEED = 150.0
+const SPEED_UPGRADE_MULTIPLIER := 1.25
 const JUMP_VELOCITY = -300.0
+const JUMP_UPGRADE_MULTIPLIER := 1.2
+const CAMERA_DEFAULT_ZOOM := Vector2(5, 5)
+const CAMERA_UPGRADE_ZOOM := Vector2(4, 4)
+
+const LAYER_GROUND_INDEX := 1
+const LAYER_INTERACT_INDEX := 2
+const LAYER_GROUND := 1 << (LAYER_GROUND_INDEX - 1)
+const LAYER_INTERACT := 1 << (LAYER_INTERACT_INDEX - 1)
 
 const HAZARD_TILES := [
 	{"source": 0, "atlas": Vector2i(5, 0)}
@@ -15,17 +24,30 @@ var is_dead := false
 
 @onready var anim = $AnimatedSprite2D  # adjust if your node name is different
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var camera: Camera2D = get_node_or_null("Camera2D")
 
 var tilemap: TileMapLayer
 var killzone_area: Node
+var speed := SPEED
+var jump_velocity := JUMP_VELOCITY
+var purchased_upgrades: Dictionary = {}
 
 func _ready() -> void:
 	is_dead = false
 	set_physics_process(true)
+	speed = SPEED
+	jump_velocity = JUMP_VELOCITY
+	purchased_upgrades.clear()
 	health = max_health
-	_emit_health_changed()
 	tilemap = _find_tilemap()
 	killzone_area = _find_killzone()
+	_ensure_collision_layers()
+	if camera:
+		camera.zoom = CAMERA_DEFAULT_ZOOM
+	if GameState.has_saved_state():
+		GameState.apply_to_player(self)
+	else:
+		_emit_health_changed()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -37,19 +59,19 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 		anim.play("jump")
 
 	# Handle horizontal movement
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction != 0:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 		if is_on_floor():
 			anim.play("run")
 		# Flip sprite depending on direction
 		anim.flip_h = direction < 0
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 		if is_on_floor():
 			anim.play("idle")
 
@@ -151,6 +173,95 @@ func die() -> void:
 	_emit_health_changed()
 	velocity = Vector2.ZERO
 	set_physics_process(false)
+	GameState.clear_state()
 
 func _emit_health_changed() -> void:
 	emit_signal("health_changed", health, max_health)
+
+func can_spend_health(cost: int, keep_minimum: int = 1) -> bool:
+	if is_dead or cost <= 0:
+		return false
+	var minimum: int = max(keep_minimum, 0)
+	return health - cost >= minimum
+
+func spend_health(cost: int, keep_minimum: int = 1) -> bool:
+	if not can_spend_health(cost, keep_minimum):
+		return false
+	health -= cost
+	_emit_health_changed()
+	return true
+
+func has_shop_upgrade(id: StringName) -> bool:
+	return purchased_upgrades.get(String(id), false)
+
+func purchase_shop_upgrade(id: StringName, cost: int) -> bool:
+	var key := String(id)
+	if has_shop_upgrade(key):
+		return false
+	if not spend_health(cost):
+		return false
+	purchased_upgrades[key] = true
+	_apply_shop_upgrade(key)
+	return true
+
+func _apply_shop_upgrade(id: String) -> void:
+	match id:
+		"view":
+			_apply_view_upgrade()
+		"jump":
+			_apply_jump_upgrade()
+		"speed":
+			_apply_speed_upgrade()
+		_:
+			pass
+
+func _apply_view_upgrade() -> void:
+	if not camera:
+		return
+	if camera.zoom == Vector2.ZERO:
+		camera.zoom = CAMERA_DEFAULT_ZOOM
+	camera.zoom = CAMERA_UPGRADE_ZOOM
+
+func _apply_jump_upgrade() -> void:
+	jump_velocity = JUMP_VELOCITY * JUMP_UPGRADE_MULTIPLIER
+
+func _apply_speed_upgrade() -> void:
+	speed = SPEED * SPEED_UPGRADE_MULTIPLIER
+
+func _ensure_collision_layers() -> void:
+	var required_layers := LAYER_GROUND | LAYER_INTERACT
+	collision_layer |= required_layers
+	collision_mask |= required_layers
+	set_collision_layer_value(LAYER_GROUND_INDEX, true)
+	set_collision_layer_value(LAYER_INTERACT_INDEX, true)
+	set_collision_mask_value(LAYER_GROUND_INDEX, true)
+	set_collision_mask_value(LAYER_INTERACT_INDEX, true)
+
+func export_state() -> Dictionary:
+	return {
+		"max_health": max_health,
+		"health": health,
+		"purchased_upgrades": purchased_upgrades.duplicate(true)
+	}
+
+func apply_state(state: Dictionary) -> void:
+	if state.is_empty():
+		return
+	max_health = int(state.get("max_health", max_health))
+	health = clamp(int(state.get("health", max_health)), 0, max_health)
+	speed = SPEED
+	jump_velocity = JUMP_VELOCITY
+	if camera:
+		camera.zoom = CAMERA_DEFAULT_ZOOM
+	purchased_upgrades.clear()
+	var saved_upgrades_variant: Variant = state.get("purchased_upgrades", {})
+	if saved_upgrades_variant is Dictionary:
+		var saved_upgrades: Dictionary = saved_upgrades_variant as Dictionary
+		for ability_variant in saved_upgrades.keys():
+			var owned: bool = bool(saved_upgrades.get(ability_variant, false))
+			if not owned:
+				continue
+			var key: String = String(ability_variant)
+			purchased_upgrades[key] = true
+			_apply_shop_upgrade(key)
+	_emit_health_changed()

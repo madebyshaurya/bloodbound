@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=4]
+
+[ext_resource type="Script" path="res://scripts/ui/shop_menu.gd" id="1_2w6fk"]
+
+[node name="ShopMenu" type="CanvasLayer"]
+layer = 250
+script = ExtResource("1_2w6fk")
+
+[node name="Panel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -220.0
+offset_right = 260.0
+offset_bottom = 220.0
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+custom_constants/margin_left = 28
+custom_constants/margin_top = 24
+custom_constants/margin_right = 28
+custom_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 12
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Panel/Margin/VBox"]
+theme_override_font_sizes/font_size = 36
+text = "Bloodbound Bazaar"
+horizontal_alignment = 1
+add_theme_color_override("font_color", Color(0.890196, 0.333333, 0.333333))
+
+[node name="HpLabel" type="Label" parent="Panel/Margin/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 24
+text = "Health: 0 / 0"
+horizontal_alignment = 1
+
+[node name="IntroLabel" type="Label" parent="Panel/Margin/VBox"]
+theme_override_font_sizes/font_size = 18
+text = "Spend life to gain boons. Leave at least a heartbeat to survive."
+autowrap_mode = 1
+horizontal_alignment = 1
+
+[node name="Abilities" type="VBoxContainer" parent="Panel/Margin/VBox"]
+size_flags_horizontal = 3
+custom_constants/separation = 8
+
+[node name="ViewRow" type="HBoxContainer" parent="Panel/Margin/VBox/Abilities"]
+size_flags_horizontal = 3
+custom_constants/separation = 6
+
+[node name="ViewButton" type="Button" parent="Panel/Margin/VBox/Abilities/ViewRow"]
+unique_name_in_owner = true
+text = "Widen Sight"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+
+[node name="ViewDescription" type="Label" parent="Panel/Margin/VBox/Abilities/ViewRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "Widen your view of the battlefield."
+autowrap_mode = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="JumpRow" type="HBoxContainer" parent="Panel/Margin/VBox/Abilities"]
+size_flags_horizontal = 3
+custom_constants/separation = 6
+
+[node name="JumpButton" type="Button" parent="Panel/Margin/VBox/Abilities/JumpRow"]
+unique_name_in_owner = true
+text = "High Leap"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+
+[node name="JumpDescription" type="Label" parent="Panel/Margin/VBox/Abilities/JumpRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "Launch higher for safer traversal."
+autowrap_mode = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="SpeedRow" type="HBoxContainer" parent="Panel/Margin/VBox/Abilities"]
+size_flags_horizontal = 3
+custom_constants/separation = 6
+
+[node name="SpeedButton" type="Button" parent="Panel/Margin/VBox/Abilities/SpeedRow"]
+unique_name_in_owner = true
+text = "Swift Steps"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+
+[node name="SpeedDescription" type="Label" parent="Panel/Margin/VBox/Abilities/SpeedRow"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "Run faster to outmaneuver foes."
+autowrap_mode = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="Separator" type="HSeparator" parent="Panel/Margin/VBox"]
+size_flags_horizontal = 3
+
+[node name="MessageLabel" type="Label" parent="Panel/Margin/VBox"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "Trade health for forbidden power."
+autowrap_mode = 1
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+
+[node name="CloseButton" type="Button" parent="Panel/Margin/VBox"]
+unique_name_in_owner = true
+text = "Leave Shop"
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22

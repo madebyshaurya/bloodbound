@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cavj28jj8lklr"]
+
+[ext_resource type="Texture2D" uid="uid://5n5as4sch66h" path="res://assets/shop cart.png" id="1_lx5au"]
+[ext_resource type="Script" uid="uid://8tittkkqfxrl" path="res://scripts/shop.gd" id="2_xfvoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfvoa"]
+size = Vector2(114, 94)
+
+[node name="shop" type="Sprite2D"]
+z_index = 5
+texture = ExtResource("1_lx5au")
+script = ExtResource("2_xfvoa")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, 1)
+shape = SubResource("RectangleShape2D_xfvoa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
