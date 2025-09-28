@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://c2n8xd3boufx6" path="res://scenes/spike.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://cavj28jj8lklr" path="res://scenes/shop.tscn" id="11_kvpfn"]
 [ext_resource type="PackedScene" path="res://scenes/ui/shop_menu.tscn" id="12_shopmenu"]
+[ext_resource type="FontFile" uid="uid://dbq60pccvxd5g" path="res://assets/font/PixelOperator8.ttf" id="13_ir15t"]
 [ext_resource type="AudioStream" uid="uid://clnokfjrklgbs" path="res://assets/Sounds/bgmusic.mp3" id="14_trtic"]
-[ext_resource type="PackedScene" uid="uid://o75rt6n4xut8" path="res://scenes/skeleton.tscn" id="15_skeleton"]
 
 [sub_resource type="GDScript" id="GDScript_gee14"]
 
@@ -187,9 +187,6 @@ z_index = 5
 position = Vector2(-1657, -6)
 scale = Vector2(0.7, 0.7)
 
-[node name="SkeletonEnemy" parent="." instance=ExtResource("15_skeleton")]
-position = Vector2(-1400, -10)
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 0)
 zoom = Vector2(5, 5)
@@ -305,7 +302,8 @@ offset_top = 6.0
 offset_right = 412.0
 offset_bottom = 48.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("13_ir15t")
+theme_override_font_sizes/font_size = 64
 text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -329,10 +327,13 @@ mouse_filter = 2
 [node name="AmmoLabel" type="Label" parent="HUD/AmmoContainer"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 180.0
-offset_bottom = 40.0
+offset_left = -474.0
+offset_top = -93.0
+offset_right = 6.0
+offset_bottom = -29.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("13_ir15t")
+theme_override_font_sizes/font_size = 64
 text = "Ammo: 0/0"
 horizontal_alignment = 2
 vertical_alignment = 1
